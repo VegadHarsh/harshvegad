@@ -1,0 +1,4 @@
+recptchakeys
+
+site key -> 6LcoPP4qAAAAAHOLK6mgxAOFW9333GJG21EydHcS
+secret key -> 6LcoPP4qAAAAADL04NRw7XuIOcIlU4x8QLyf3OD8

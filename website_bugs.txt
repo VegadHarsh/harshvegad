@@ -1,0 +1,5 @@
+1. The home page 1 section is not showing when I reach the other page and return to the home page the section is not showing it.
+
+2. The navbar is not properly responsive
+
+3. when come to the website first show the white space and then after see Loder.
