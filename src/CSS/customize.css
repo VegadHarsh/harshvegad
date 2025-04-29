@@ -1,0 +1,1151 @@
+/*---------------------
+  Header
+-----------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000800;
+    color: #fff;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 9;
+}
+
+.nav_bar {
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    /* Fixed position to make it stay in place */
+    top: 0;
+    left: -380px;
+    /* Hidden by default */
+    z-index: 1000;
+    background: rgb(0 0 0 / 67%);
+    backdrop-filter: blur(7px);
+    border-radius: 0 10px 10px 0;
+    /* Rounded corners on the right side */
+    border: 1px solid rgba(26, 1, 54, 0.2);
+    box-shadow: rgba(26, 1, 54, 0.15) 0px 0px 24px;
+    transition: left 0.7s cubic-bezier(0.65, 0.18, 0.99, 1);
+}
+
+.section_header.active {
+    left: 0px;
+    position: absolute;
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    /* Fixed position to make it stay in place */
+    top: 0;
+    /* Hidden by default */
+    z-index: 1000;
+    background: rgb(0 0 0 / 67%);
+    backdrop-filter: blur(7px);
+    border-radius: 0 10px 10px 0;
+    /* Rounded corners on the right side */
+    border: 1px solid rgba(26, 1, 54, 0.2);
+    box-shadow: rgba(26, 1, 54, 0.15) 0px 0px 24px;
+    transition: left 0.7s cubic-bezier(0.65, 0.18, 0.99, 1);
+    /* Show sidebar when active */
+}
+
+.nav_bar_contents {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Stack contents vertically */
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    padding: 0;
+}
+
+nav ul li {
+    width: 100%;
+    line-height: 16px;
+    text-align: center;
+    /* Center text */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.main_links {
+    list-style: none;
+}
+
+.Simbol_Name_design {
+    font-size: 50px;
+    width: 23%;
+    margin-bottom: 20px;
+    /* Space below the logo/name */
+}
+
+.hr_simbol {
+    display: flex;
+    justify-content: end;
+    margin: 20px 25px;
+}
+
+.hamburger_menu {
+    font-size: 10px;
+    cursor: pointer;
+    color: #fff;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -50px;
+}
+
+/* Menu hover design */
+.main_links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 25px 0px;
+}
+
+.menu_bar {
+    display: flex;
+    margin: 3px 0px;
+}
+
+.home_part .Home_y:last-child {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    transition: top 0.9s cubic-bezier(0.65, 0.18, 0.99, 1), opacity 0.7s cubic-bezier(0.65, 0.18, 0.99, 1);
+}
+
+.home_part .Home_y:first-child {
+    transition: transform 0.9s cubic-bezier(0.65, 0.18, 0.99, 1);
+    display: flex;
+}
+
+.home_part {
+    position: relative;
+    padding-top: 0.1042vw;
+    padding-bottom: 0.1042vw;
+    line-height: 1.875vw;
+    overflow: hidden;
+}
+
+.home_part .Home_y>div {
+    transition: transform 0.2s cubic-bezier(0.65, 0.18, 0.99, 1);
+}
+
+.home_part:hover .Home_y:first-child>div {
+    transform: translateY(-100%);
+}
+
+.home_part:hover .Home_y:last-child {
+    top: 0;
+    opacity: 1;
+}
+
+.home_part:hover .Home_y:last-child>div {
+    opacity: 1;
+    transition: transform 0.9s cubic-bezier(0.65, 0.18, 0.99, 1);
+    transform: translateY(0);
+}
+
+.home_part .Home_y:first-child>div:nth-child(1),
+.home_part .Home_y:last-child>div:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(2),
+.home_part .Home_y:last-child>div:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(3),
+.home_part .Home_y:last-child>div:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(4),
+.home_part .Home_y:last-child>div:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(5),
+.home_part .Home_y:last-child>div:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(6),
+.home_part .Home_y:last-child>div:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(7),
+.home_part .Home_y:last-child>div:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.home_part .Home_y:first-child>div:nth-child(8),
+.home_part .Home_y:last-child>div:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+
+/* follow me */
+.follow .follow_me p {
+    font-size: 10px;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.my_links .target_link a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.my_links {
+    line-height: 17px;
+}
+
+.my_links .target_link a span {
+    opacity: 0;
+    position: relative;
+    right: 2px;
+}
+
+.my_links .target_link a:hover span {
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+    position: relative;
+    left: 3px;
+    transition: 0.3s ease;
+}
+
+.get_touch {
+    line-height: 57px;
+}
+
+.business_num .follow_me {
+    line-height: 57px;
+}
+
+.email_link a {
+    color: #000000;
+    background-color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0px 7px;
+    transition: .3s ease;
+    font-size: 10px;
+    padding: 3px 10px;
+}
+
+.email_link a:hover {
+    color: #ffffff;
+    background-color: inherit;
+}
+
+.follow .professional_num p {
+    font-size: 14px;
+    margin: 0px;
+}
+
+.add_ress a {
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+/* Adjustments for smaller screens */
+/* Header part Adjustments */
+@media (max-width: 768px) {
+    .hamburger_menu {
+        right: -40px;
+    }
+
+    .nav_bar {
+        top: 0;
+        left: -192px;
+    }
+
+    .home_part {
+        font-size: 20px;
+    }
+}
+
+/* @media only screen and (min-width: 375px) and (max-width: 766px) {
+    .hamburger_menu {
+      right: -50px;
+    }
+  
+    .nav_bar {
+      width: 70%;
+      top: 0;
+      left: -265px;
+    }
+  
+    .hr_simbol {
+      margin: 20px 25px 0px 25px;
+    }
+  } */
+
+@media (max-width: 1440px) {
+    .nav_bar {
+        left: -360px;
+    }
+
+    .details {
+        margin: 0px 10px;
+    }
+
+    .hr_simbol {
+        margin: 0px 25px 0px 20px;
+    }
+
+    .main_links {
+        margin: 10px 0px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .nav_bar {
+        left: -410px;
+        width: 40%;
+    }
+
+    .hr_simbol {
+        margin: 0px 25px 0px 20px;
+    }
+
+    .main_links {
+        margin: 10px 0px;
+    }
+
+    .home_part {
+        line-height: 2.675vw;
+    }
+
+    .details {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav_bar {
+        left: -385px;
+        width: 50%;
+    }
+
+    .hr_simbol {
+        margin: 0px 25px 0px 20px;
+    }
+
+    .main_links {
+        margin: 10px 0px;
+    }
+
+    .home_part {
+        line-height: 3.275vw;
+        font-size: 25px;
+    }
+
+    .details {
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .details {
+        margin: 10px;
+    }
+
+    /* .nav_bar {
+        left: -363px;
+        width: 85%;
+    } */
+
+    .hr_simbol {
+        margin: 0px 25px 0px 20px;
+    }
+
+    .main_links {
+        margin: 10px 0px;
+    }
+
+    .home_part {
+        line-height: 5.875vw;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    /* .nav_bar {
+        left: -272px;
+        width: 85%;
+    } */
+
+    .hr_simbol {
+        margin: 0px 25px 0px 20px;
+    }
+
+    .main_links {
+        margin: 10px 0px;
+    }
+
+    .home_part {
+        line-height: 5.875vw;
+    }
+}
+
+
+
+/* set logo */
+.HR_LOGO {
+    width: 70%;
+}
+
+.my_logo {
+    position: absolute;
+    width: 12%;
+    z-index: 2;
+    left: 288px;
+    top: 60px;
+}
+
+/* Follow me links */
+.link_provide_for_follow {
+    font-size: 23px;
+    margin: 10px 0px 20px 0px;
+}
+
+.follow_link {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    transition: opacity .2s linear, background .2s linear;
+}
+
+.follow_link:hover i {
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+.follow_link.follow_1:hover {
+    color: rgb(39, 167, 231);
+}
+
+.follow_link.follow_2:hover {
+    color: rgb(59, 89, 152);
+}
+
+.follow_link.follow_3:hover {
+    color: rgb(0, 123, 182);
+}
+
+.follow_link.follow_4:hover {
+    color: rgb(214, 41, 118);
+}
+
+/* Hero section */
+.my_image {
+    position: relative;
+    bottom: 307px;
+    right: 0px;
+    width: 50%;
+}
+
+.my_image img {
+    position: absolute;
+}
+
+
+/* Services logo */
+.i_cons {
+    color: white;
+    font-size: 40px;
+}
+
+.icons_set {
+    position: absolute;
+}
+
+.icons_set .i_cons {
+    font-size: 30px;
+}
+
+.i_cons_l {
+    position: absolute;
+    left: 13px;
+    top: -20px;
+}
+
+.i_cons_r {
+    position: absolute;
+    right: 13px;
+    top: -8px;
+}
+
+@media (max-width: 1025px) {
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+    }
+
+    .HR_LOGO {
+        width: 12%;
+        position: absolute;
+        left: 162px;
+    }
+
+    .col-lg-6.my_image {
+        position: relative;
+        bottom: 270px;
+        right: 0px;
+        width: 50%;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 376px) {
+    .nav_bar {
+        left: -320.1px;
+        width: 85%;
+    }
+    
+    .hamburger_menu {
+        right: -60px;
+    }
+
+    .menu_bar {
+        display: flex;
+        margin: 5px 0px;
+    }
+}
+
+/* Navbar media query */
+@media (min-width: 525px) and (max-width: 575px) {
+    .nav_bar {
+        left: -374px;
+        width: 65%;
+      }
+
+      .hamburger_menu {
+        right: -75px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 20%;
+        position: absolute;
+        left: 215px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 65%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 575px) and (max-width: 630px) {
+    .nav_bar {
+        left: -409px;
+        width: 65%;
+      }
+
+      .hamburger_menu {
+        right: -75px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 20%;
+        position: absolute;
+        left: 230px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 65%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 630px) and (max-width: 680px) {
+    .nav_bar {
+        left: -375px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 680px) and (max-width: 740px) {
+    .nav_bar {
+        left: -375px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 740px) and (max-width: 800px) {
+    .nav_bar {
+        left: -440px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 800px) and (max-width: 860px) {
+    .nav_bar {
+        left: -473px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 800px) and (max-width: 860px) {
+    .nav_bar {
+        left: -473px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 860px) and (max-width: 900px) {
+    .nav_bar {
+        left: -496px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 900px) and (max-width: 960px) {
+    .nav_bar {
+        left: -528px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 960px) and (max-width: 990px) {
+    .nav_bar {
+        left: -544px;
+        width: 55%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 55%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 320px) and (max-width:350px) {
+    .nav_bar {
+        left: -307px;
+        width: 88%;
+      }
+
+      .hamburger_menu {
+        right: -60px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 88%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .section_header.active {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1024px) {
+    .section_header.active {
+        width: 40%;
+    }
+}
+
+
+/*  Main LOGO */
+@media (min-width: 230px) and (max-width: 376px) {
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 24%;
+        position: absolute;
+        left: 125px;
+        top: 30px;
+      }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+    .nav_bar {
+        left: -318px;
+        width: 75%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 28%;
+        position: absolute;
+        left: 144px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 75%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 425px) and (max-width: 475px) {
+    .nav_bar {
+        left: -356px;
+        width: 75%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 23%;
+        position: absolute;
+        left: 165px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 75%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+@media (min-width: 475px) and (max-width: 525px) {
+    .nav_bar {
+        left: -393px;
+        width: 75%;
+      }
+
+      .hamburger_menu {
+        right: -70px;
+    }
+
+    .my_logo {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        left: 0px;
+      }
+    
+      .HR_LOGO {
+        width: 20%;
+        position: absolute;
+        left: 210px;
+        top: 30px;
+      }
+
+      .section_header.active {
+        width: 75%;
+      }
+    
+      .menu_bar {
+        display: flex;
+        margin: 7px 0px;
+      }
+}
+
+/* header responsive */
+@media (min-width: 320px) and (max-width:426px) {
+
+    .follow .professional_num p {
+        font-size: 12px;
+    }
+}
+
+/* About me */
+.team {
+    padding: 50px 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.freelance-services {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.freelance-intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f8f9fa;
+}
+
+.freelance-intro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ccc;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-item {
+    /* flex: 1 1 calc(30% - 10px); */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width:630px) {
+    .my_image {
+        display: none;
+    }
+
+    .hero__text h4 {
+        font-size: 17px;
+    }
+}
